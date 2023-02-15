@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 
+#include <cmath>
+
 class Solver
 {
 public:
@@ -12,13 +14,14 @@ public:
 	~Solver();
 
 	void input();
-	void infix();
+	void postfix();
+	int solve();
 
-	const char ASCII = '0';
+	const char ASCII = '0'; // used to convert ASCII numbers to integers
+	const static char* h;
 private:
 	std::string _input;
 	std::stack<char> _stack;
-	//std::queue<char> _queue;
 	std::queue<int> _queue;
 	std::string operators = "*/+-";
 };
